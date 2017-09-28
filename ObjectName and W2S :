@@ -1,0 +1,17 @@
+FString ObjName(Player* obj)
+{
+	DWORD_PTR funcAddress = (DWORD_PTR)(DWORD64)MEM::GetModule(FortniteClient-Win64-Shipping.exe)->BaseAddress + 0x2139F30;
+	if (funcAddress != 0)
+	{
+		return reinterpret_cast<FString(__fastcall*)(Player*)>(funcAddress)(obj);
+	}
+}
+ 
+bool WScreen(APlayerController* m_Player, FVector WorldPosition, FVector2 *ScreenPosition)
+{
+	DWORD_PTR funcAddress = (DWORD_PTR)(DWORD64)MEM::GetModule(FortniteClient-Win64-Shipping.exe)->BaseAddress + 0x20C93E0;
+	if (funcAddress != 0)
+	{
+		return reinterpret_cast<char(__fastcall*)(APlayerController*, FVector, FVector2 *, char)>(funcAddress)(m_Player, WorldPosition, ScreenPosition, 0);
+	}
+}
